@@ -40,4 +40,8 @@ To build the app run the command below
 npm run build
 ```
 
-After building application the build output will be in the dist folder. 
+After building application the build output will be in the dist folder.
+
+This challenge was found [here](https://github.com/anthonyoride/PaTiTi-Backend-Challenge)
+
+The POSTMAN Documentation for application is [here](https://documenter.getpostman.com/view/4626076/UzBvH3vQ)
