@@ -1,0 +1,1 @@
+export { default as updateConsent } from './updateConsent';
