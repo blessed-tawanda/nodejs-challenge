@@ -1,9 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import cors from 'cors';
-import { healthCheckHandler, notFoundHandler } from './routes';
+import { eventsHandler, healthCheckHandler, notFoundHandler, usersHandler } from './routes';
 import { json, urlencoded } from "express";
 
 // configurations
@@ -22,8 +21,10 @@ app.use(urlencoded({extended: true}));
 // routes
 app.use('/api/v1/health-check', healthCheckHandler);
 
-app.use(notFoundHandler);
+app.use('/api', usersHandler);
+app.use('/api', eventsHandler);
 
+app.use(notFoundHandler);
 
 app.listen(port, () => {
   logger.info(`Server Start Up On Port ${port} `);

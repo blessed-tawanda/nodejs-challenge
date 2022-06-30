@@ -1,6 +1,6 @@
-import { Request, Response } from "experess";
+import { Request, Response } from "express";
 import logger from "../logger";
-import { response } from "helpers";
+import { response } from "../helpers";
 
 export const notFoundHandler = (req: Request, res: Response) => {
     logger.info(`${req.url} Route not found`);
@@ -11,3 +11,6 @@ export const healthCheckHandler = (req: Request, res: Response) => {
     logger.info(`Health check for service`);
     res.status(200).json(response(true, `Service Running`));
 }
+
+export { default as usersHandler } from "./usersHandler";
+export { default as eventsHandler } from "./eventsHandler";
